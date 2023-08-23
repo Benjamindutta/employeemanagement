@@ -10,13 +10,13 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install node packages
-RUN npm install
+RUN sudo npm install
 
 # Copy or project directory (locally) in the current directory of our docker image (/app)
 COPY . .
 
 # Build the app
-RUN npm run build
+RUN sudo npm run build
 
 # Expose $PORT on container.
 # We use a varibale here as the port is something that can differ on the environment.
